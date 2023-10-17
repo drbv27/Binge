@@ -1,0 +1,42 @@
+<h2 class='Movies'>
+	My Songs
+	<button id='new-song-popup'>Add a new song</button>
+
+	<dialog id='add-song-dialog'>
+		<label for='song-name'>Enter song name: </label>
+		<input type='text' id='song-name' />
+		<label for='song-description'>Add song description: </label>
+		<input type='text' id='song-description' />
+		<label for='have-listened-input'>listened </label>
+		<input type='checkbox' id='have-listened-input' />
+		<button id='add-song-button'>Add</button>
+	</dialog>
+</h2>
+<main>
+	<div class='column'>
+		<h3>Listened</h3>
+		<!--To do: revsise the css so that the h3 tags are in line with eachother-->
+		<ul id='song-list'>
+			{{#each heardSongs as |heardSong|}}
+				<div class='song'>
+					<h3>{{heardSong.name}}</h3>
+					<p>{{heardSong.description}}</p>
+				</div>
+			{{/each}}
+		</ul>
+
+	</div>
+	<div class='column'>
+		<h3>Queue</h3>
+		<ul id='song-list'>
+			{{#each unheardSongs as |unheardSong|}}
+				<div class='song'>
+					<h3>{{unheardSong.name}}</h3>
+					<p>{{unheardSong.description}}</p>
+				</div>
+			{{/each}}
+		</ul>
+
+	</div>
+
+</main>
